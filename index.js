@@ -12,6 +12,11 @@ function swigFilter(inputTree, options) {
     
     if (options) {
         this.context = options.context || {};
+        
+        if (options.extendSwig) {
+            options.extendSwig(this.swig);
+        }
+        
     } else {
         this.context = {};
     }
