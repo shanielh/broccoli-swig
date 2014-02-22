@@ -3,6 +3,11 @@
   "version": "0.0.1",
   "description": "Broccoli-Swig filter",
   "main": "index.js",
+  "repository" : { 
+      "type" : "git", 
+      "url" : "https://github.com/shanielh/broccoli-swig.git"
+  },
+  "homepage" : "https://github.com/shanielh/broccoli-swig",
   "scripts": {
       "test": "broccoli build temp && mocha"
   },
