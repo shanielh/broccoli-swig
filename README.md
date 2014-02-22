@@ -21,6 +21,6 @@ And then, Use :
         return tree;
     };
     
-Currently there is no support for layout because of swig-filter #1 issue.
+Currently there is no support for layout because of [broccoli-filter #1 issue](https://github.com/joliss/broccoli-filter/pull/1).
 
     
