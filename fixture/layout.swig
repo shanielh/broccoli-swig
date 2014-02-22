@@ -1,0 +1,1 @@
+Hello {%block contents %}{%endblock%}!
