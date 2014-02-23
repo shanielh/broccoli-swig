@@ -22,7 +22,10 @@ And then, Use :
         
         return tree;
     };
-    
-Currently there is no support for layout because of [broccoli-filter #1 issue](https://github.com/joliss/broccoli-filter/pull/1).
+
+Currently the support for extend/include is limited, Because of [broccoli-filter #1 issue](https://github.com/joliss/broccoli-filter/pull/1). If you want support in extend/include, You can specify "filename" which swig will use to get relative paths :
+
+    var swigOptions = { context : { locals : { what : "World"}, filename : "src/file_that_doesnt_exists.swig" } };
+
 
     
