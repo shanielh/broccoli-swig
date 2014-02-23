@@ -6,19 +6,14 @@ function swigFilter(inputTree, options) {
 	if (!(this instanceof swigFilter)) {
 		return new swigFilter(inputTree, options);
 	}
-
-
     this.swig = require('swig');
+    this.swig.setDefaults({ cache: false });
     
-    if (options) {
-        this.context = options.context || {};
+    this.options = options || {};
+    this.context = this.options.context || {};
         
-        if (options.extendSwig) {
-            options.extendSwig(this.swig);
-        }
-        
-    } else {
-        this.context = {};
+    if (this.options.extendSwig) {
+        this.options.extendSwig(this.swig);
     }
     
 	this.inputTree = inputTree;
