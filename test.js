@@ -4,8 +4,9 @@ var fs = require('fs');
 var path = require('path');
 var rimraf = require('rimraf');
 
-afterEach(function () {
+after(function () {
 	rimraf.sync('temp');
+    rimraf.sync('tmp');
 });
 
 var files = fs.readdirSync('fixture');
@@ -21,10 +22,12 @@ for (var index in files) {
     
     var baseName = path.basename(fileName, '.swig');
     
-    it('should compile md ' + fileName, function () {
+    it('should compile swig ' + fileName, function () {
     	assert.equal(
     		fs.readFileSync('temp/' + baseName + '.html', 'utf8'),
     		fs.readFileSync('fixture/expected/' + baseName + '.html', 'utf8').trim()
     	);
     });
 }
+
+rimraf.sync('tmp');

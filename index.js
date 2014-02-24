@@ -1,5 +1,6 @@
 'use strict';
 var Filter = require('broccoli-filter');
+var extend = require('util')._extend;
 
 function swigFilter(inputTree, options) {
     
@@ -25,8 +26,11 @@ swigFilter.prototype.constructor = swigFilter;
 swigFilter.prototype.extensions = ['swig'];
 swigFilter.prototype.targetExtension = 'html';
 
-swigFilter.prototype.processString = function (str) {
-	return this.swig.render(str, this.context);
+swigFilter.prototype.processString = function (str, file) {
+    var fileNameContext = { filename : this.inputTree.dir + '/' + file};
+    var context = extend(fileNameContext, this.context);
+	
+    return this.swig.render(str, context);
 };
 
 module.exports = swigFilter;
