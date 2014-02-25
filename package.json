@@ -1,8 +1,9 @@
 {
   "name": "broccoli-swig",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Broccoli-Swig filter",
   "main": "index.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/shanielh/broccoli-swig.git"
@@ -15,7 +16,7 @@
     "broccoli-plugin",
     "swig"
   ],
-  "author": "Shani Elharrar",
+  "author": "Shani Elharrar <shani.elha@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "broccoli-filter": "0.1.0",
